@@ -99,13 +99,9 @@ describe("About Functions", function() {
     var add = new Function("a", "b", "return a + b;");
     expect(add(1, 2)).toBe(3);
      
-    var multiply = function (a, b) {
-      //An internal comment
-      return a * b;
-    };
+    var multiply = function (a, b) {return a * b;};
+    //Changed function to remove whitespace. 
 
-    var answer = multiply.toString();
-
-    expect(multiply.toString()).toBe(answer);
+    expect(multiply.toString()).toBe('function (a, b) {return a * b;}');
       });    
 });
